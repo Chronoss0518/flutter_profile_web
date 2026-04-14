@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_profile_homepage/component/menu.dart';
 
+const _BAR_HEIGHT = 20.0;
+
 class DisplayBase extends StatelessWidget
 {
   DisplayBase(this.child,this.pageKey,this.title,this.thameColor,{super.key});
@@ -14,13 +16,12 @@ class DisplayBase extends StatelessWidget
   Widget build(BuildContext context) {
     return Column(
       children: [
-        HeaderMenu(pageKey),
+        HeaderMenu(pageKey,_BAR_HEIGHT),
         Scaffold(
-          appBar: AppBar(
-            backgroundColor: thameColor,
-            title: Text(title),
-          ),
-          body: child,
+          body: Column(children: [
+            Container(color:thameColor,child: Text(title),height: _BAR_HEIGHT,),
+            child
+          ],),
         ),
       ],
     );
