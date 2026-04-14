@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_profile_homepage/component/menu.dart';
 import 'package:flutter_profile_homepage/display/display_base.dart';
 
-const _TITLE = "Home";
-const _THAME_COLOR = Colors.cyanAccent;
+const HOME_TITLE = "Home";
+const HOME_THAME_COLOR = Colors.grey;
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -20,13 +20,15 @@ class _State extends State<Home> {
     return DisplayBase(
       Scaffold(
         appBar: AppBar(
-          backgroundColor: _THAME_COLOR,
-          title: Text(_TITLE),
+          backgroundColor: HOME_THAME_COLOR,
+          title: Text(HOME_TITLE),
         ),
         body: Center(
         ),
       ),
       HOME_KEY,
+      HOME_TITLE,
+      HOME_THAME_COLOR,
     );
   }
 }
