@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_profile_homepage/component/menu.dart';
 
-const _BAR_HEIGHT = 20.0;
+const _BAR_HEIGHT = 40.0;
 
 class DisplayBase extends StatelessWidget
 {
@@ -14,16 +14,17 @@ class DisplayBase extends StatelessWidget
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
+    double widthSize = MediaQuery.of(context).size.width;
+    return Scaffold(
+      body: Column(children: [
         HeaderMenu(pageKey,_BAR_HEIGHT),
-        Scaffold(
-          body: Column(children: [
-            Container(color:thameColor,child: Text(title),height: _BAR_HEIGHT,),
-            child
-          ],),
-        ),
-      ],
+        Container(
+          color:thameColor,
+          child: Center(child: Text(title)),
+          height: _BAR_HEIGHT,
+          width: widthSize,),
+        child
+      ],),
     );
   }
 }
