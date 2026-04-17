@@ -9,7 +9,7 @@ const LIBRARY_KEY = "/library";
 
 class HeaderMenu extends StatelessWidget
 {
-  HeaderMenu(this.pageKey,this.height,{super.key});
+  const HeaderMenu(this.pageKey,this.height,{super.key});
 
   final String pageKey;
   final double height;
@@ -45,7 +45,6 @@ class HeaderMenu extends StatelessWidget
 
   void _changePage(BuildContext context,String changePageName)
   {
-    if(context == null)return;
     if(pageKey == changePageName)return;
     bool find = false;
 
