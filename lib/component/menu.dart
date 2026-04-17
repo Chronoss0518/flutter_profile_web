@@ -30,14 +30,14 @@ class HeaderMenu extends StatelessWidget
     String title,
     Color thema)
   {
-    return MaterialButton(
-      onPressed: (){_changePage(context, pageKey);},
-      child: Container(
-        color: thema,
-        width: width,
-        height: height,
-        child: Text(title),
-        )
+    return Container(
+      color: thema,
+      width: width,
+      height: height,
+      child: MaterialButton(
+        onPressed: (){_changePage(context, pageKey);},
+        child: Center(child: Text(title)),
+      ),
     );
   }
 
