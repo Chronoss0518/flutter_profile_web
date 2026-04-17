@@ -18,13 +18,7 @@ class _State extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return DisplayBase(
-      Scaffold(
-        appBar: AppBar(
-          backgroundColor: HOME_THAME_COLOR,
-          title: Text(HOME_TITLE),
-        ),
-        body: Center(
-        ),
+      Center(
       ),
       HOME_KEY,
       HOME_TITLE,

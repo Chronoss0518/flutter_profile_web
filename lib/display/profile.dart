@@ -18,7 +18,6 @@ class _State extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     return DisplayBase(
-      
       Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children:[
