@@ -19,8 +19,10 @@ class DisplayBase extends StatelessWidget
       body: Column(children: [
         HeaderMenu(pageKey,_BAR_HEIGHT),
         Container(
-          color:thameColor,
           child: Center(child: Text(title)),
+          decoration:BoxDecoration(
+            border: Border.all(color: Colors.black),
+            color:thameColor,),
           height: _BAR_HEIGHT,
           width: widthSize,),
         child

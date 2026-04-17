@@ -31,9 +31,11 @@ class HeaderMenu extends StatelessWidget
     Color thema)
   {
     return Container(
-      color: thema,
       width: width,
       height: height,
+      decoration:BoxDecoration(
+        color: thema,
+        border: Border.all(color: Colors.black)),
       child: MaterialButton(
         onPressed: (){_changePage(context, pageKey);},
         child: Center(child: Text(title)),
