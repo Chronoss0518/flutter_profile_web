@@ -9,10 +9,11 @@ const LIBRARY_KEY = "/library";
 
 class HeaderMenu extends StatelessWidget
 {
-  const HeaderMenu(this.pageKey,this.height,{super.key});
+  const HeaderMenu(this.pageKey,this.height,this.textSize,{super.key});
 
   final String pageKey;
   final double height;
+  final double textSize;
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +39,7 @@ class HeaderMenu extends StatelessWidget
         border: Border.all(color: Colors.black)),
       child: MaterialButton(
         onPressed: (){_changePage(context, pageKey);},
-        child: Center(child: Text(title)),
+        child: Center(child: Text(title,style: TextStyle(fontSize: textSize),)),
       ),
     );
   }
