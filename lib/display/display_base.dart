@@ -7,17 +7,18 @@ const EXPECTED_WIDTH = 1280.0;
 const _BAR_HEIGHT = 115.0 / EXPECTED_HEIGHT;
 const _TEXT_SIZE_PARSEC = 32.0 / EXPECTED_HEIGHT;
 
-
 class DisplayBase extends StatelessWidget
 {
   const DisplayBase(this.child,this.pageKey,this.title,this.thameColor,{super.key});
 
-  double getDisplayParsec(double width,double height)
+  static Size getDisplayParsec(double width,double height)
   {
     double tmpWidth = width / EXPECTED_WIDTH;
     double tmpHeight = height / EXPECTED_HEIGHT;
 
-    return tmpHeight > tmpWidth ? tmpWidth : tmpHeight;
+    double parsec = tmpHeight > tmpWidth ? tmpWidth : tmpHeight;;
+    
+    return Size(EXPECTED_WIDTH * parsec,EXPECTED_HEIGHT * parsec);
   }
 
   final Widget child;
@@ -27,14 +28,10 @@ class DisplayBase extends StatelessWidget
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
 
-    double parsec = getDisplayParsec(size.width,size.height);
+    var size = getDisplayParsec(MediaQuery.of(context).size.width,MediaQuery.of(context).size.height);
 
-    double widthSize = EXPECTED_WIDTH * parsec;
-    double heightSize = EXPECTED_HEIGHT * parsec;
-
-    double textSize = _TEXT_SIZE_PARSEC * heightSize;
+    double textSize = _TEXT_SIZE_PARSEC * size.height;
 
     return Scaffold(
       body: Container(
@@ -43,15 +40,15 @@ class DisplayBase extends StatelessWidget
         color: Colors.black,
         child: Center(
           child: SizedBox(
-            width: widthSize,
-            height: heightSize,
+            width: size.width,
+            height: size.height,
             child: Column(children: [
-              HeaderMenu(pageKey,widthSize,_BAR_HEIGHT * heightSize,textSize),
+              HeaderMenu(pageKey,size.width,_BAR_HEIGHT * size.height,textSize),
               Container(
                 decoration:BoxDecoration(
                   border: Border.all(color: Colors.black),
                   color:thameColor,),
-                height: _BAR_HEIGHT * heightSize,
+                height: _BAR_HEIGHT * size.height,
                 child: Center(child: Text(title,style: TextStyle(fontSize: textSize))),),
               child
             ],),
