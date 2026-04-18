@@ -4,7 +4,7 @@ import 'package:flutter_profile_homepage/component/menu.dart';
 import 'package:flutter_profile_homepage/display/display_base.dart';
 
 const HOME_TITLE = "Home";
-const HOME_THAME_COLOR = Colors.grey;
+const HOME_THAME_COLOR = Color.fromARGB(255, 125, 125, 125);
 
 class Home extends StatefulWidget {
   const Home({super.key});

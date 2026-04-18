@@ -4,7 +4,7 @@ import 'package:flutter_profile_homepage/component/menu.dart';
 import 'package:flutter_profile_homepage/display/display_base.dart';
 
 const PROFILE_TITLE = "Profile";
-const PROFILE_THAME_COLOR = Colors.cyanAccent;
+const PROFILE_THAME_COLOR = Color.fromARGB(255, 125, 255, 255);
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
