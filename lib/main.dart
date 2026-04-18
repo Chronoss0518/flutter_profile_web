@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_profile_homepage/component/menu.dart';
 import 'package:flutter_profile_homepage/display/game.dart';
+import 'package:flutter_profile_homepage/display/library.dart';
 import 'package:flutter_profile_homepage/display/profile.dart';
 
 import 'display/home.dart';
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
         HOME_KEY :(BuildContext context) {return const Home();},
         PROFILE_KEY :(BuildContext context) {return const Profile();},
         GAME_KEY :(BuildContext context) {return const Game();},
+        LIBRARY_KEY :(BuildContext context) {return const Library();},
       },
       initialRoute: HOME_KEY,
     );

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_profile_homepage/display/game.dart';
 import 'package:flutter_profile_homepage/display/home.dart';
+import 'package:flutter_profile_homepage/display/library.dart';
 import 'package:flutter_profile_homepage/display/profile.dart';
 
 const HOME_KEY = "/";
@@ -23,6 +24,7 @@ class HeaderMenu extends StatelessWidget
       _buildButtonPanels(context,widthSize,HOME_KEY,HOME_TITLE,HOME_THAME_COLOR),
       _buildButtonPanels(context,widthSize,PROFILE_KEY,PROFILE_TITLE,PROFILE_THAME_COLOR),
       _buildButtonPanels(context,widthSize,GAME_KEY,GAME_TITLE,GAME_THAME_COLOR),
+      _buildButtonPanels(context,widthSize,LIBRARY_KEY,LIBRARY_TITLE,LIBRARY_THAME_COLOR),
     ],);
   }
 
@@ -54,7 +56,7 @@ class HeaderMenu extends StatelessWidget
     if(changePageName == HOME_KEY)find = true;
     if(changePageName == PROFILE_KEY)find = true;
     if(changePageName == GAME_KEY)find = true;
-    //if(changePageName == LIBRARY_KEY)find = true;
+    if(changePageName == LIBRARY_KEY)find = true;
 
     if(!find)return;
 
