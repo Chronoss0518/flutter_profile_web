@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_profile_homepage/component/menu.dart';
 import 'package:flutter_profile_homepage/display/display_base.dart';
 
-const GAME_TITLE = "Home";
+const GAME_TITLE = "Game";
 const GAME_THAME_COLOR = Color.fromARGB(255, 255, 255, 125);
 
 class Game extends StatefulWidget {

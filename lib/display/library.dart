@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_profile_homepage/component/menu.dart';
 import 'package:flutter_profile_homepage/display/display_base.dart';
 
-const LIBRARY_TITLE = "Home";
+const LIBRARY_TITLE = "Library";
 const LIBRARY_THAME_COLOR = Color.fromARGB(255,255,125,255);
 
 class Library extends StatefulWidget {
