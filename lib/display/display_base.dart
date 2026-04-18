@@ -28,8 +28,9 @@ class DisplayBase extends StatelessWidget
 
   @override
   Widget build(BuildContext context) {
+    var mediaSize = MediaQuery.of(context).size;
 
-    var size = getDisplayParsec(MediaQuery.of(context).size.width,MediaQuery.of(context).size.height);
+    var size = getDisplayParsec(mediaSize.width,mediaSize.height);
 
     double textSize = _TEXT_SIZE_PARSEC * size.height;
 
