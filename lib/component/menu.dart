@@ -11,15 +11,16 @@ const LIBRARY_KEY = "/library";
 
 class HeaderMenu extends StatelessWidget
 {
-  const HeaderMenu(this.pageKey,this.height,this.textSize,{super.key});
+  const HeaderMenu(this.pageKey,this.width,this.height,this.textSize,{super.key});
 
   final String pageKey;
   final double height;
   final double textSize;
+  final double width;
 
   @override
   Widget build(BuildContext context) {
-    double widthSize = MediaQuery.of(context).size.width / 4;
+    double widthSize = width / 4;
     return Row(children: [
       _buildButtonPanels(context,widthSize,HOME_KEY,HOME_TITLE,HOME_THAME_COLOR),
       _buildButtonPanels(context,widthSize,PROFILE_KEY,PROFILE_TITLE,PROFILE_THAME_COLOR),
