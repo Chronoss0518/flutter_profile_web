@@ -18,8 +18,7 @@ class _State extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return DisplayBase(
-      Center(
-      ),
+      Center(),
       HOME_KEY,
       HOME_TITLE,
       HOME_THAME_COLOR,

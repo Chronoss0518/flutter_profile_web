@@ -18,8 +18,7 @@ class _State extends State<Game> {
   @override
   Widget build(BuildContext context) {
     return DisplayBase(
-      Center(
-      ),
+      Center(),
       GAME_KEY,
       GAME_TITLE,
       GAME_THAME_COLOR,
