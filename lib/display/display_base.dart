@@ -39,17 +39,34 @@ class DisplayBase extends StatelessWidget
         width: mediaSize.width,
         color: Colors.black,
         child: Center(
-          child: SizedBox(
+          child: Container(
+            color:Colors.white,
             width: size.width,
-            child: Column(children: [
-              HeaderMenu(pageKey,size.width,_BAR_HEIGHT * size.height,textSize),
-              Container(
-                decoration:BoxDecoration(
-                  border: Border.all(color: Colors.black),
-                  color:thameColor,),
+            child: Stack(children: [
+              Positioned(
+                left: 0.0,
+                right: 0.0,
+                top:0.0,
                 height: _BAR_HEIGHT * size.height,
-                child: Center(child: Text(title,style: TextStyle(fontSize: textSize))),),
-              child
+                child:HeaderMenu(pageKey,size.width,_BAR_HEIGHT * size.height,textSize)),
+              Positioned(
+                left: 0.0,
+                right: 0.0,
+                height:_BAR_HEIGHT * size.height,
+                top: _BAR_HEIGHT * size.height,
+                child: Container(
+                  decoration:BoxDecoration(
+                    border: Border.all(color: Colors.black),
+                    color:thameColor,),
+                  height: _BAR_HEIGHT * size.height,
+                  child: Center(child: Text(title,style: TextStyle(fontSize: textSize))),),
+              ),
+              Positioned(
+                left: 0.0,
+                right: 0.0,
+                top: _BAR_HEIGHT * size.height * 2,
+                child: child
+              )
             ],),
           ),
         ),
