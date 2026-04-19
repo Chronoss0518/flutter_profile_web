@@ -36,13 +36,11 @@ class DisplayBase extends StatelessWidget
 
     return Scaffold(
       body: Container(
-        width: size.width,
-        height: size.height,
+        width: mediaSize.width,
         color: Colors.black,
         child: Center(
           child: SizedBox(
             width: size.width,
-            height: size.height,
             child: Column(children: [
               HeaderMenu(pageKey,size.width,_BAR_HEIGHT * size.height,textSize),
               Container(
