@@ -11,12 +11,17 @@ class DisplayBase extends StatelessWidget
 {
   const DisplayBase(this.child,this.pageKey,this.title,this.thameColor,{super.key});
 
-  static Size getDisplayParsec(double width,double height)
+  static double getDisplayParsecValue(double width,double height)
   {
     double tmpWidth = width / EXPECTED_WIDTH;
     double tmpHeight = height / EXPECTED_HEIGHT;
+    
+    return tmpHeight > tmpWidth ? tmpWidth : tmpHeight;
+  }
 
-    double parsec = tmpHeight > tmpWidth ? tmpWidth : tmpHeight;;
+  static Size getDisplayParsec(double width,double height)
+  {
+    double parsec = getDisplayParsecValue(width,height);
     
     return Size(EXPECTED_WIDTH * parsec,EXPECTED_HEIGHT * parsec);
   }
