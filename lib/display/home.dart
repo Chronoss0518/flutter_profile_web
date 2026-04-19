@@ -12,12 +12,12 @@ const HOME_THAME_COLOR = Color.fromARGB(255, 125, 125, 125);
 const _TITLE_TEXT_SIZE_PARSEC = 40.0 / EXPECTED_HEIGHT;
 const _DESCRIPTION_TEXT_SIZE_PARSEC = 32.0 / EXPECTED_HEIGHT;
 
-const _ALINE_SIZE = 95.0;
-const _PANEL_WIDTH = 300.0;
-const _PANEL_HEIGHT = 300.0;
+const _ALINE_SIZE = 95.0 / EXPECTED_WIDTH;
+const _PANEL_WIDTH = 300.0 / EXPECTED_WIDTH;
+const _PANEL_HEIGHT = 300.0 / EXPECTED_HEIGHT;
 
-const _TOP_TEXT_TOP_ALINE = 87.0;
-const _TOP_TEXT_BOTTOM_ALINE = 70.0;
+const _TOP_TEXT_TOP_ALINE = 87.0 / EXPECTED_HEIGHT;
+const _TOP_TEXT_BOTTOM_ALINE = 70.0 / EXPECTED_HEIGHT;
 const _TOP_TEXT_SIZE = 32.0 / EXPECTED_HEIGHT;
 
 class Home extends StatefulWidget {
@@ -34,13 +34,12 @@ class _State extends State<Home> {
 
     var mediaSize = MediaQuery.of(context).size;
 
-    var parsec = DisplayBase.getDisplayParsecValue(mediaSize.width, mediaSize.height);
     var size = DisplayBase.getDisplayParsec(mediaSize.width,mediaSize.height);
 
     return DisplayBase(
       Column(children: [
         Container(
-          margin: EdgeInsets.only(top:_TOP_TEXT_TOP_ALINE * parsec,bottom:_TOP_TEXT_BOTTOM_ALINE * parsec),
+          margin: EdgeInsets.only(top:_TOP_TEXT_TOP_ALINE * size.height,bottom:_TOP_TEXT_BOTTOM_ALINE * size.height),
           child: Text("Chronossの紹介ページ",style: TextStyle(fontSize: _TOP_TEXT_SIZE * size.height),),
         ),
         Center(
@@ -62,13 +61,12 @@ class _State extends State<Home> {
   {
     var mediaSize = MediaQuery.of(context).size;
 
-    var parsec = DisplayBase.getDisplayParsecValue(mediaSize.width,mediaSize.height);
     var size = DisplayBase.getDisplayParsec(mediaSize.width,mediaSize.height);
 
     return Container(
-      margin: EdgeInsets.only(left:_ALINE_SIZE * parsec,),
-      width:_PANEL_WIDTH * parsec,
-      height:_PANEL_HEIGHT * parsec,
+      margin: EdgeInsets.only(left:_ALINE_SIZE * size.width,),
+      width:_PANEL_WIDTH * size.width,
+      height:_PANEL_HEIGHT * size.height,
       decoration: BoxDecoration(color:thema,border: Border.all()),
       child:MaterialButton(
         onPressed: (){HeaderMenu.changePage(context,pageKey);},
