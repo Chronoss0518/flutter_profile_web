@@ -52,8 +52,13 @@ class HeaderMenu extends StatelessWidget
   void _changePage(BuildContext context,String changePageName)
   {
     if(pageKey == changePageName)return;
-    bool find = false;
+    changePage(context, changePageName);
+  }
 
+  static void changePage(BuildContext context,String changePageName)
+  {
+
+    bool find = false;
     if(changePageName == HOME_KEY)find = true;
     if(changePageName == PROFILE_KEY)find = true;
     if(changePageName == GAME_KEY)find = true;
